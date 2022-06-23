@@ -1,0 +1,29 @@
+# UGC
+douban.com: &main
+  sanitize:
+    # Group thread page
+    - pattern: ^\/group\/topic\/\d+
+      allowedParams:
+        - start
+      sanitizePath: true
+    # Group home page
+    - pattern: ^\/group\/\d+
+      allowedParams: []
+    # User status post page
+    - pattern: ^\/people\/\d+\/status/\d+
+      allowedParams: []
+      sanitizePath: true
+    # User home page
+    - pattern: ^\/people\/\d+
+      allowedParams: []
+m.douban.com: *main
+www.douban.com: *main
+
+# Move, book, music collections
+movie.douban.com: &artworks_site
+  sanitize:
+    - pattern: ^\/subject\/\d+
+      allowedParams: []
+
+book.douban.com: *artworks_site
+music.douban.com: *artworks_site

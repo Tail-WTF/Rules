@@ -1,0 +1,7 @@
+twitter.com: &main
+  sanitize:
+    - pattern: ^\/[A-Za-z0-9_]{1,15}\/status\/\d+
+      allowedParams: []
+      sanitizePath: true
+m.twitter.com: *main
+www.twitter.com: *main

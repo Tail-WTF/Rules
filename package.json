@@ -1,0 +1,12 @@
+{
+  "name": "assembler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "assembler.js",
+  "scripts": {
+    "assemble": "node assembler.js"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}

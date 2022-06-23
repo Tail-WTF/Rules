@@ -1,0 +1,29 @@
+# URL Shortener
+b23.tv:
+    expand:
+      # token starts with av, bv, ep are not shortened and can be used as is
+      - pattern: ^\/(?!([AaBb][Vv]\w+)|(ep\d+))
+    sanitize:
+      - pattern: ^\/[AaBb][Vv]\w+
+        allowedParams: []
+        sanitizePath: true
+      - pattern: ^\/ep\d+
+        allowedParams: []
+        sanitizePath: true
+
+# Main site
+bilibili.com: &main
+    sanitize:
+      # Regular video pages
+      - pattern: "^\/video\/[AaBb][Vv]\\w+"
+        allowedParams:
+          - p
+          - t
+        sanitizePath: true
+      # Anime pages
+      - pattern: "^\/bangumi\/play\/ep\\d+"
+        allowedParams:
+          - t
+        sanitizePath: true
+    minify: []
+www.bilibili.com: *main

@@ -1,0 +1,12 @@
+zhihu.com: &main
+  sanitize:
+    # Individual answer page
+    - pattern: ^\/question\/\d+\/answer\/\d+
+      allowedParams: []
+      sanitizePath: true
+    # Question page
+    - pattern: ^\/question\/\d+
+      allowedParams:
+        - page
+      sanitizePath: true
+www.zhihu.com: *main
