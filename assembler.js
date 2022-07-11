@@ -18,7 +18,8 @@ fs.readdir(RULES_PATH, (err, files) => {
 
   const rules = files
     .filter((file) => path.extname(file.toLowerCase()) === ".yaml")
-    .map((file) => YAML.load(fs.readFileSync(path.join(RULES_PATH, file))));
+    .map((file) => YAML.load(fs.readFileSync(path.join(RULES_PATH, file))))
+    .reduce((acc, curr) => Object.assign(acc, curr), {});
 
   fs.writeFileSync(
     OUTPUT_FILE,
