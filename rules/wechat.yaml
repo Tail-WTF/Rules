@@ -1,0 +1,27 @@
+# Reference: https://soaked.in/2020/08/wechat-platform-url/ (CC BY-SA 4.0)
+# https://wiki.creativecommons.org/wiki/ShareAlike_compatibility:_GPLv3
+
+mp.weixin.qq.com:
+  sanitize:
+    # https://mp.weixin.qq.com/s/-rwvHhqYbKGCVFeXRNknYQ
+    - pattern: "^\/s\/\\w{22}"
+      allowedParams: []
+      sanitizePath: true
+    # Long WeChat mp article links
+    - pattern: "^\/s(\/)?$"
+      allowedParams:
+        # Regular article links
+        - __biz
+        - mid
+        - idx
+        - sn
+        # Old, regular article links
+        - appmsgid
+        - itemidx
+        - sign
+        # Sogou temporary links
+        - src
+        - timestamp
+        - ver
+        - signature
+      sanitizePath: true
