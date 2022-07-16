@@ -29,3 +29,4 @@ bilibili.com: &main
       sanitizePath: true
   minify: []
 www.bilibili.com: *main
+m.bilibili.com: *main
