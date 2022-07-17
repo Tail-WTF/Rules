@@ -1,0 +1,10 @@
+tiktok.com: &main
+  expand:
+    # https://www.tiktok.com/t/<unique_id>
+    - pattern: ^\/t\/\w+
+  sanitize:
+    # https://www.tiktok.com/@<author_username>/video/<video_id>?_t=<tracking_id>
+    - pattern: "^\/@.*?\/video\/\\d+"
+      allowedParams: []
+      sanitizePath: true
+www.tiktok.com: *main
