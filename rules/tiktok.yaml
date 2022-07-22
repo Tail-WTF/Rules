@@ -8,3 +8,19 @@ tiktok.com: &main
       allowedParams: []
       sanitizePath: true
 www.tiktok.com: *main
+
+# TikTok CN (Douyin)
+v.douyin.com:
+  expand:
+    - pattern: ^\/\w+
+www.iesdouyin.com:
+  sanitize:
+    - pattern: "^\/share\/video\/\\d+"
+      allowedParams: []
+      sanitizePath: true
+www.douyin.com: &cn_main
+  sanitize:
+    - pattern: "^\/video\/\\d+"
+      allowedParams: []
+      sanitizePath: true
+douyin.com: *cn_main

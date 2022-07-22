@@ -1,0 +1,7 @@
+www.cnn.com: &main
+  sanitize:
+    # Product page
+    - pattern: ^\/.*\/article\/[\w|-]+
+      allowedParams: []
+      sanitizePath: true
+cnn.com: *main
