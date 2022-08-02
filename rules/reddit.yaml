@@ -1,0 +1,17 @@
+www.reddit.com: &main
+  sanitize:
+    ##### CAUTION: ORDER OF RULES MATTERS #####
+    # Comment under post
+    - pattern: ^\/(r|user)\/[\w-_]+\/comments\/\w+\/comment\/\w+
+      allowedParams:
+        - context
+      sanitizePath: true
+    # Post
+    - pattern: ^\/(r|user)\/[\w-_]+\/comments\/\w+
+      allowedParams: []
+      sanitizePath: true
+    # User or Subreddit
+    - pattern: ^\/(r|user)\/[\w\-_]+\/?$
+      allowedParams: []
+      sanitizePath: true
+reddit.com: *main
