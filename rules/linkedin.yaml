@@ -1,0 +1,7 @@
+www.linkedin.com: &main
+  sanitize:
+    # Job detail page
+    - pattern: ^\/jobs\/view\/\d+
+      allowedParams: []
+      sanitizePath: true
+linkedin.com: *main
