@@ -1,0 +1,11 @@
+xiaohongshu.com: &main
+  sanitize:
+    # https://www.xiaohongshu.com/discovery/item/<item_id>
+    - pattern: ^\/discovery\/item\/\w+
+      allowedParams: []
+      sanitizePath: true
+www.xiaohongshu.com: *main
+
+xhslink.com:
+  expand:
+    - pattern: ^\/.+
