@@ -1,0 +1,11 @@
+www.airbnb.com: &main
+  sanitize:
+    # Listing page
+    - pattern: ^\/rooms\/\d+
+      allowedParams:
+        - adults
+        - location
+        - check_in
+        - check_out
+      sanitizePath: true
+airbnb.com: *main
