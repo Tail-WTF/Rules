@@ -4,6 +4,9 @@ xiaohongshu.com: &main
     - pattern: ^\/discovery\/item\/\w+
       allowedParams: []
       sanitizePath: true
+    - pattern: ^\/explore\/\w+
+      allowedParams: []
+      sanitizePath: true
 www.xiaohongshu.com: *main
 
 xhslink.com:
