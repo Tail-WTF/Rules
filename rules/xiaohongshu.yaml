@@ -7,6 +7,9 @@ xiaohongshu.com: &main
     - pattern: ^\/explore\/\w+
       allowedParams: []
       sanitizePath: true
+    - pattern: ^\/user\/profile\/\w+
+      allowedParams: []
+      sanitizePath: true
 www.xiaohongshu.com: *main
 
 xhslink.com:
