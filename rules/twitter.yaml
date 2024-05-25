@@ -5,3 +5,5 @@ twitter.com: &main
       sanitizePath: true
 m.twitter.com: *main
 www.twitter.com: *main
+x.com: *main
+www.x.com: *main
