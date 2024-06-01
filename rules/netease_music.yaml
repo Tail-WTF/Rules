@@ -1,0 +1,17 @@
+163cn.tv:
+  expand:
+    - pattern: ^\/.+
+
+music.163.com:
+  sanitize:
+    - pattern: "^\/(song|album|playlist|artist|radio)"
+      allowedParams:
+        - id
+      sanitizePath: true
+
+y.music.163.com:
+  sanitize:
+    - pattern: "^\/m\/(song|album|playlist|artist|radio)"
+      allowedParams:
+        - id
+      sanitizePath: true
