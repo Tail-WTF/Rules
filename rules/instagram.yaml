@@ -6,4 +6,7 @@ instagram.com: &main
     - pattern: ^\/stories\/[a-z0-9\.]{1,30}\/\d+ # /stories/username/story_id
       allowedParams: []
       sanitizePath: true
+    - pattern: ^\/reel\/\w+
+      allowedParams: []
+      sanitizePath: true
 www.instagram.com: *main
