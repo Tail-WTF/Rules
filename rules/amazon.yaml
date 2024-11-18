@@ -1,7 +1,11 @@
 www.amazon.com: &main
   sanitize:
     # Product page
-    - pattern: ^\/.*\/dp\/\w+
+    - pattern: ^\/(.*\/?)dp\/\w+
       allowedParams: []
       sanitizePath: true
 amazon.com: *main
+
+a.co:
+  expand:
+    - pattern: ^\/d\/\w+
