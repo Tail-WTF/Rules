@@ -19,6 +19,8 @@ bilibili.com: &main
       allowedParams:
         - p
         - t
+        - dmid
+        - dm_progress
       ignorableParamValues:
         p: ["1"]
       sanitizePath: true
@@ -26,6 +28,8 @@ bilibili.com: &main
     - pattern: "^\/bangumi\/play\/ep\\d+"
       allowedParams:
         - t
+        - dmid
+        - dm_progress
       sanitizePath: true
   minify: []
 www.bilibili.com: *main
