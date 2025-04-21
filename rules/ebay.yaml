@@ -1,0 +1,7 @@
+www.ebay.com: &main
+  sanitize:
+    # Product page
+    - pattern: ^\/itm\/\d+
+      allowedParams: []
+      sanitizePath: true
+ebay.com: *main
