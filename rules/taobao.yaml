@@ -1,0 +1,8 @@
+detail.tmall.com: &main
+  sanitize:
+    - pattern: ^\/item.htm
+      allowedParams:
+        - id
+        - skuId
+      sanitizePath: true
+item.taobao.com: *main
