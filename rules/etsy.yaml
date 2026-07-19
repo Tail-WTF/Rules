@@ -1,0 +1,9 @@
+www.etsy.com: &main
+  sanitize:
+    # Listing page, e.g. /listing/123456789/some-product-title - the slug after the
+    # id is optional and purely descriptive, so it's trimmed along with tracking
+    # params (ref, frs, sts, click_key, ...).
+    - pattern: '^\/listing\/\d+'
+      allowedParams: []
+      sanitizePath: true
+etsy.com: *main

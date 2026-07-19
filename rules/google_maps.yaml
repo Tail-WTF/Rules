@@ -1,0 +1,26 @@
+www.google.com: &main
+  sanitize:
+    # Search share link, e.g. /maps/search/?api=1&query=<place or lat,lng>
+    - pattern: '^\/maps\/search\/'
+      allowedParams: [api, query, q]
+    # Directions share link with origin/destination as query params rather than path
+    - pattern: '^\/maps\/dir\/'
+      allowedParams: [api, origin, destination, travelmode]
+    # Place pages and pin/view URLs: name, coordinates, and place id all live in the
+    # path (e.g. /maps/place/NAME/@lat,lng,zoom/data=...!8m2!3d.../16zL...) so the
+    # path is left untouched; only query params (tracking like entry=ttu) are dropped.
+    - pattern: '^\/maps\/'
+      allowedParams: []
+    # Legacy query-based pin, e.g. /maps?q=<place or lat,lng>
+    - pattern: '^\/maps$'
+      allowedParams: [q]
+google.com: *main
+maps.google.com: *main
+
+maps.app.goo.gl:
+  expand:
+    - pattern: '^\/'
+
+goo.gl:
+  expand:
+    - pattern: '^\/maps'

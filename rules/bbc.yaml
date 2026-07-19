@@ -1,0 +1,22 @@
+bbc.com: &main
+  sanitize:
+    ##### CAUTION: ORDER OF RULES MATTERS #####
+    # News article, current id format: bbc.com/news/articles/<id>
+    - pattern: '^\/news\/articles\/[a-z0-9]+'
+      allowedParams: []
+      sanitizePath: true
+    # Sport article, current id format: bbc.com/sport/[<topic>/]articles/<id>
+    - pattern: '^\/sport\/(?:[\w-]+\/)?articles\/[a-z0-9]+'
+      allowedParams: []
+      sanitizePath: true
+    # News article, legacy slug-id format: bbc.com/news/<slug>-<id>
+    - pattern: '^\/news\/[\w-]+-\d+'
+      allowedParams: []
+      sanitizePath: true
+    # Sport article, legacy topic/id format: bbc.com/sport/<topic>/<id>
+    - pattern: '^\/sport\/[\w-]+\/\d+'
+      allowedParams: []
+      sanitizePath: true
+www.bbc.com: *main
+bbc.co.uk: *main
+www.bbc.co.uk: *main

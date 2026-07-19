@@ -1,0 +1,8 @@
+www.netflix.com: &main
+  sanitize:
+    # Title page, e.g. /title/80057281 or /us/title/80057281 - drops trkid and
+    # other tracking params.
+    - pattern: '^\/(\w{2}(-\w{2})?\/)?title\/\d+'
+      allowedParams: []
+      sanitizePath: true
+netflix.com: *main

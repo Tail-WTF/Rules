@@ -1,0 +1,35 @@
+# PC site: weibo.com/<uid>/<mid> where mid is a base62-encoded status id
+# weibo.cn mirrors the same /<uid>/<mid> path structure
+weibo.com: &main
+  sanitize:
+    # Status page, e.g. weibo.com/1234567890/AbCdEfGhI
+    - pattern: ^\/\d+\/\w+
+      allowedParams: []
+      sanitizePath: true
+    # User profile
+    - pattern: ^\/u\/\d+
+      allowedParams: []
+      sanitizePath: true
+www.weibo.com: *main
+weibo.cn: *main
+
+# Mobile site
+m.weibo.cn:
+  sanitize:
+    # Status detail page, e.g. m.weibo.cn/detail/5068718910212264
+    - pattern: ^\/detail\/\d+
+      allowedParams: []
+      sanitizePath: true
+    # Older status page format
+    - pattern: ^\/status\/\d+
+      allowedParams: []
+      sanitizePath: true
+    # User profile
+    - pattern: ^\/u\/\d+
+      allowedParams: []
+      sanitizePath: true
+
+# URL shortener
+t.cn:
+  expand:
+    - pattern: ^\/.+

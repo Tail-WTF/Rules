@@ -1,0 +1,14 @@
+threads.net: &main
+  sanitize:
+    ##### CAUTION: ORDER OF RULES MATTERS #####
+    # Post via author: threads.net/@<user>/post/<post_id>
+    - pattern: ^\/@[\w.\-]+\/post\/\w+
+      allowedParams: []
+      sanitizePath: true
+    # Short post link: threads.net/t/<post_id>
+    - pattern: ^\/t\/\w+
+      allowedParams: []
+      sanitizePath: true
+www.threads.net: *main
+threads.com: *main
+www.threads.com: *main

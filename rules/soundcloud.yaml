@@ -1,0 +1,16 @@
+soundcloud.com: &main
+  sanitize:
+    ##### CAUTION: ORDER OF RULES MATTERS #####
+    # Playlist/album: soundcloud.com/<artist>/sets/<playlist>
+    - pattern: ^\/[\w-]+\/sets\/[\w-]+
+      allowedParams: []
+      sanitizePath: true
+    # Track: soundcloud.com/<artist>/<track>
+    - pattern: ^\/[\w-]+\/[\w-]+\/?$
+      allowedParams: []
+      sanitizePath: true
+m.soundcloud.com: *main
+
+on.soundcloud.com:
+  expand:
+    - pattern: ^\/.+

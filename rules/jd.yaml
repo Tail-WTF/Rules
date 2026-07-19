@@ -1,0 +1,22 @@
+# Item pages address content via the numeric skuId in the path.
+item.jd.com:
+  sanitize:
+    # https://item.jd.com/<sku_id>.html
+    - pattern: ^\/\d+\.html
+      allowedParams: []
+      sanitizePath: true
+
+item.m.jd.com:
+  sanitize:
+    # https://item.m.jd.com/product/<sku_id>.html
+    - pattern: ^\/product\/\d+\.html
+      allowedParams: []
+      sanitizePath: true
+
+# URL shorteners
+u.jd.com:
+  expand:
+    - pattern: ^\/.+
+3.cn:
+  expand:
+    - pattern: ^\/.+

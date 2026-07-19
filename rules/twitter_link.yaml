@@ -1,0 +1,5 @@
+# Twitter/X wraps every link posted on the platform in a t.co short link;
+# confirmed to perform a genuine HTTP redirect, not a JS interstitial.
+t.co:
+  expand:
+    - pattern: ^\/.+

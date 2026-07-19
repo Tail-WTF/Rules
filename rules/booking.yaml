@@ -1,0 +1,9 @@
+www.booking.com: &main
+  sanitize:
+    # Hotel page, e.g. /hotel/us/example-hotel.html - dates and occupancy are kept
+    # since they change what's displayed (availability/price); aid/label affiliate
+    # tracking is dropped.
+    - pattern: '^\/hotel\/[a-z]{2}\/[^\/]+\.html'
+      allowedParams: [checkin, checkout, group_adults, group_children, no_rooms]
+      sanitizePath: true
+booking.com: *main

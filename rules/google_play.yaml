@@ -1,0 +1,6 @@
+play.google.com:
+  sanitize:
+    # App details page - id is the app's package name and is required; hl/gl
+    # (locale) and referrer are dropped.
+    - pattern: '^\/store\/apps\/details'
+      allowedParams: [id]

@@ -1,0 +1,4 @@
+# Reddit's official post short link, e.g. https://redd.it/<post_id>
+redd.it:
+  expand:
+    - pattern: ^\/.+

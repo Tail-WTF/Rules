@@ -1,7 +1,15 @@
 www.ebay.com: &main
   sanitize:
-    # Product page
-    - pattern: ^\/itm\/\d+
-      allowedParams: []
+    # Item page, e.g. /itm/123456789012 or /itm/Some-Title-Slug/123456789012
+    # var identifies the selected variation (color/size/etc) and changes what's
+    # shown, so it's kept; everything else (campid, hash, sojTags, mkevt, ...) is
+    # affiliate/tracking.
+    - pattern: '^\/itm\/([^\/]+\/)?\d+'
+      allowedParams: [var]
       sanitizePath: true
 ebay.com: *main
+m.ebay.com: *main
+
+ebay.us:
+  expand:
+    - pattern: '^\/'

@@ -1,0 +1,7 @@
+bloomberg.com: &main
+  sanitize:
+    # Article: bloomberg.com/news/articles/<date>-<slug>
+    - pattern: '^\/news\/articles\/\d{4}-\d{2}-\d{2}\/[\w-]+'
+      allowedParams: []
+      sanitizePath: true
+www.bloomberg.com: *main

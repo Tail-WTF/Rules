@@ -1,0 +1,50 @@
+facebook.com: &main
+  sanitize:
+    ##### CAUTION: ORDER OF RULES MATTERS #####
+    # Video watch page: facebook.com/watch?v=<video_id>
+    - pattern: ^\/watch\/?$
+      allowedParams:
+        - v
+    # Legacy video page: facebook.com/video.php?v=<video_id>
+    - pattern: ^\/video\.php
+      allowedParams:
+        - v
+    # Reels: id is in the path
+    - pattern: ^\/reel\/\d+
+      allowedParams: []
+      sanitizePath: true
+    # Photo: facebook.com/photo.php?fbid=<id> or facebook.com/photo/?fbid=<id>
+    - pattern: ^\/photo(\.php|\/)?
+      allowedParams:
+        - fbid
+    # Story permalink: facebook.com/story.php?story_fbid=<post_id>&id=<profile_id>
+    # both params are required to resolve which profile's post this is
+    - pattern: ^\/story\.php
+      allowedParams:
+        - story_fbid
+        - id
+    # Legacy post permalink: facebook.com/permalink.php?story_fbid=<post_id>&id=<profile_id>
+    - pattern: ^\/permalink\.php
+      allowedParams:
+        - story_fbid
+        - id
+    # Group post: facebook.com/groups/<group_id>/posts/<post_id>
+    - pattern: ^\/groups\/[\w.\-]+\/posts\/\w+
+      allowedParams: []
+      sanitizePath: true
+    # Profile/page post: facebook.com/<username>/posts/<post_id>
+    - pattern: ^\/[\w.\-]+\/posts\/\w+
+      allowedParams: []
+      sanitizePath: true
+www.facebook.com: *main
+m.facebook.com: *main
+
+# Vanity redirect domain to facebook.com; treated as a redirector rather than
+# assumed to mirror facebook.com's path structure
+fb.com:
+  expand:
+    - pattern: ^\/.+
+
+fb.watch:
+  expand:
+    - pattern: ^\/.+

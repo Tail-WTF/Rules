@@ -1,0 +1,7 @@
+ikea.com: &main
+  sanitize:
+    # Product: ikea.com/<cc>/<lang>/p/<slug>-<id>/
+    - pattern: '^\/[a-z]{2}\/[a-z]{2}\/p\/[\w-]+\/?'
+      allowedParams: []
+      sanitizePath: true
+www.ikea.com: *main

@@ -1,0 +1,11 @@
+open.spotify.com:
+  sanitize:
+    # Track/album/playlist/artist/episode/show pages: id is in the path,
+    # no query param is needed to render the same content (si etc. are share trackers)
+    - pattern: "^\/(track|album|playlist|artist|episode|show)\/\\w+"
+      allowedParams: []
+      sanitizePath: true
+
+spotify.link:
+  expand:
+    - pattern: ^\/.+

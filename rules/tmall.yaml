@@ -1,0 +1,12 @@
+# Item pages address content via "id" (and variant via "skuId") query params.
+tmall.com: &main
+  sanitize:
+    # https://detail.tmall.com/item.htm?id=<item_id>&skuId=<sku_id>
+    - pattern: ^\/item\.htm
+      allowedParams:
+        - id
+        - skuId
+www.tmall.com: *main
+detail.tmall.com: *main
+detail.m.tmall.com: *main
+m.tmall.com: *main

@@ -1,0 +1,6 @@
+vimeo.com:
+  sanitize:
+    # Video: vimeo.com/<video_id>[/<unlisted_hash>] - hash is required for unlisted videos, kept via sanitizePath
+    - pattern: '^\/\d+(?:\/[a-z0-9]+)?'
+      allowedParams: []
+      sanitizePath: true

@@ -1,8 +1,31 @@
-detail.tmall.com: &main
+# Item pages address content via the "id" query param rather than the path,
+# so it must be kept even though the catch-all otherwise strips everything.
+# skuId selects the displayed variation (color/size/etc), so it is content,
+# not tracking.
+taobao.com: &item_id_host
   sanitize:
-    - pattern: ^\/item.htm
+    - pattern: .*
       allowedParams:
         - id
         - skuId
-      sanitizePath: true
-item.taobao.com: *main
+www.taobao.com: *item_id_host
+m.taobao.com: *item_id_host
+main.m.taobao.com: *item_id_host
+
+item.taobao.com:
+  sanitize:
+    # https://item.taobao.com/item.htm?id=<item_id>
+    - pattern: ^\/item\.htm
+      allowedParams:
+        - id
+        - skuId
+
+# App-launch short link
+m.tb.cn:
+  expand:
+    - pattern: ^\/.+
+
+# Affiliate/promotion redirect wrapper
+s.click.taobao.com:
+  expand:
+    - pattern: ^\/.+

@@ -1,0 +1,8 @@
+theguardian.com: &main
+  sanitize:
+    # Article: theguardian.com/<section>/<year>/<mon>/<day>/<slug>
+    # section must be a single path segment; multi-segment sections (e.g. sport/formula1/...) are left unsanitized
+    - pattern: '^\/[\w-]+\/\d{4}\/[a-z]{3}\/\d{2}\/[\w-]+'
+      allowedParams: []
+      sanitizePath: true
+www.theguardian.com: *main

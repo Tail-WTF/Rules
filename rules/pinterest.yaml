@@ -1,0 +1,11 @@
+pinterest.com: &main
+  sanitize:
+    # Pin page: id is in the path
+    - pattern: ^\/pin\/\d+
+      allowedParams: []
+      sanitizePath: true
+www.pinterest.com: *main
+
+pin.it:
+  expand:
+    - pattern: ^\/.+

@@ -1,0 +1,60 @@
+# Generic standalone URL shortener services: server-side HTTP redirect,
+# destination unrelated to the shortener's own domain.
+
+# Bitly. j.mp is Bitly's original short domain; existing j.mp links still
+# resolve through the same redirect infrastructure as bit.ly.
+bit.ly: &token_path
+  expand:
+    - pattern: ^\/.+
+j.mp: *token_path
+
+# TinyURL
+tinyurl.com:
+  expand:
+    - pattern: ^\/.+
+
+# is.gd / v.gd, same operator, same behavior
+is.gd: &isgd_path
+  expand:
+    - pattern: ^\/.+
+v.gd: *isgd_path
+
+# Buffer's share shortener
+buff.ly:
+  expand:
+    - pattern: ^\/.+
+
+# dlvr.it
+dlvr.it:
+  expand:
+    - pattern: ^\/.+
+
+# trib.al, used by many news publishers (NYT, Bloomberg, etc.) for social shares
+trib.al:
+  expand:
+    - pattern: ^\/.+
+
+# Rebrandly's public rb.gy shortener
+rb.gy:
+  expand:
+    - pattern: ^\/.+
+
+# cutt.ly
+cutt.ly:
+  expand:
+    - pattern: ^\/.+
+
+# tiny.cc
+tiny.cc:
+  expand:
+    - pattern: ^\/.+
+
+# shorturl.at
+shorturl.at:
+  expand:
+    - pattern: ^\/.+
+
+# Hootsuite's ow.ly, used broadly for scheduled social posts
+ow.ly:
+  expand:
+    - pattern: ^\/.+

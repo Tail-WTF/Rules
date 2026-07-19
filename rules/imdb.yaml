@@ -1,0 +1,13 @@
+imdb.com: &main
+  sanitize:
+    ##### CAUTION: ORDER OF RULES MATTERS #####
+    # Title page: imdb.com/title/tt<id>
+    - pattern: ^\/title\/tt\d+
+      allowedParams: []
+      sanitizePath: true
+    # Person page: imdb.com/name/nm<id>
+    - pattern: ^\/name\/nm\d+
+      allowedParams: []
+      sanitizePath: true
+www.imdb.com: *main
+m.imdb.com: *main

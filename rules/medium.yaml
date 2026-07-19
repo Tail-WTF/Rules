@@ -1,0 +1,17 @@
+medium.com: &main
+  sanitize:
+    ##### CAUTION: ORDER OF RULES MATTERS #####
+    # Short link: medium.com/p/<12-char hex hash>
+    - pattern: ^\/p\/[0-9a-f]{12}
+      allowedParams: []
+      sanitizePath: true
+    # Article via member/user: medium.com/@<user>/<slug>-<12-char hex hash>
+    - pattern: ^\/@[\w.\-]+\/[\w-]+-[0-9a-f]{12}
+      allowedParams: []
+      sanitizePath: true
+    # Article via publication: medium.com/<publication>/<slug>-<12-char hex hash>
+    # hash suffix required so this doesn't swallow non-article routes like /m/global-identity
+    - pattern: ^\/[\w-]+\/[\w-]+-[0-9a-f]{12}
+      allowedParams: []
+      sanitizePath: true
+www.medium.com: *main

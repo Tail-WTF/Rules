@@ -1,0 +1,6 @@
+# Amazon's official short link / affiliate share domains
+amzn.to: &main
+  expand:
+    - pattern: ^\/.+
+amzn.eu: *main
+amzn.asia: *main

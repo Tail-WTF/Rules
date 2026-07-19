@@ -1,0 +1,12 @@
+# Goods pages address content via the "goods_id" query param rather than the path.
+mobile.yangkeduo.com: &main
+  sanitize:
+    # https://mobile.yangkeduo.com/goods.html?goods_id=<id> (also goods1.html, goods2.html, ...)
+    - pattern: ^\/goods\d*\.html
+      allowedParams:
+        - goods_id
+    # Coupon landing page, still addressed by goods_id
+    - pattern: ^\/duo_coupon_landing\.html
+      allowedParams:
+        - goods_id
+yangkeduo.com: *main

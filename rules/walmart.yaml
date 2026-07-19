@@ -1,0 +1,7 @@
+www.walmart.com: &main
+  sanitize:
+    # Product page, e.g. /ip/Product-Name/609040889 or /ip/609040889
+    - pattern: '^\/ip\/(.*\/)?\d+'
+      allowedParams: []
+      sanitizePath: true
+walmart.com: *main

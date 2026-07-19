@@ -1,0 +1,6 @@
+bsky.app:
+  sanitize:
+    # Post: bsky.app/profile/<handle>/post/<id>
+    - pattern: '^\/profile\/[\w.\-]+\/post\/\w+'
+      allowedParams: []
+      sanitizePath: true

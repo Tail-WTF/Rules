@@ -1,0 +1,7 @@
+stackoverflow.com: &main
+  sanitize:
+    # Question: stackoverflow.com/questions/<id>[/<slug>] - slug is optional, id alone redirects to the slug form
+    - pattern: '^\/questions\/\d+(?:\/[\w-]+)?'
+      allowedParams: []
+      sanitizePath: true
+www.stackoverflow.com: *main

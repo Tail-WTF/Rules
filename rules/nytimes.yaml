@@ -1,0 +1,8 @@
+nytimes.com: &main
+  sanitize:
+    # Article: nytimes.com/<year>/<mm>/<dd>/<section[/subsection...]>/<slug>.html
+    # unlocked_article_code is a gift-link token granting paywall access - functionally required, keep it
+    - pattern: '^\/\d{4}\/\d{2}\/\d{2}\/(?:[\w-]+\/)+[\w-]+\.html'
+      allowedParams: [unlocked_article_code]
+      sanitizePath: true
+www.nytimes.com: *main

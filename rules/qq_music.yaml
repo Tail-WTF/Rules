@@ -1,0 +1,18 @@
+y.qq.com:
+  sanitize:
+    # https://y.qq.com/n/ryqq/songDetail/<song_mid>
+    - pattern: ^\/n\/(ryqq|ryqq_v2)\/songDetail\/\w+
+      allowedParams: []
+      sanitizePath: true
+    # https://y.qq.com/n/ryqq/albumDetail/<album_mid>
+    - pattern: ^\/n\/(ryqq|ryqq_v2)\/albumDetail\/\w+
+      allowedParams: []
+      sanitizePath: true
+    # https://y.qq.com/n/ryqq/playlist/<playlist_id>
+    - pattern: ^\/n\/(ryqq|ryqq_v2)\/playlist\/\d+
+      allowedParams: []
+      sanitizePath: true
+    # https://y.qq.com/n/ryqq/singer/<singer_mid>
+    - pattern: ^\/n\/(ryqq|ryqq_v2)\/singer\/\w+
+      allowedParams: []
+      sanitizePath: true

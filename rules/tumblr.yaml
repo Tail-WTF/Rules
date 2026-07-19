@@ -1,0 +1,8 @@
+tumblr.com: &main
+  sanitize:
+    # Post: tumblr.com/<blog>/<post_id>[/<slug>]
+    # note: <blog>.tumblr.com subdomain form is not covered - exact-host matching can't express a wildcard subdomain
+    - pattern: '^\/[\w-]+\/\d+(?:\/[\w-]+)?'
+      allowedParams: []
+      sanitizePath: true
+www.tumblr.com: *main

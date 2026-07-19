@@ -1,0 +1,7 @@
+deezer.com: &main
+  sanitize:
+    # Track/album/playlist/artist/show/episode: deezer.com/[<lang>/]<type>/<id>
+    - pattern: '^\/(?:[a-z]{2}\/)?(track|album|playlist|artist|show|episode)\/\d+'
+      allowedParams: []
+      sanitizePath: true
+www.deezer.com: *main

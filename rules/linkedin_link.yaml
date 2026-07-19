@@ -1,0 +1,4 @@
+# LinkedIn's official short link
+lnkd.in:
+  expand:
+    - pattern: ^\/.+

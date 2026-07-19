@@ -1,0 +1,20 @@
+twitch.tv: &main
+  sanitize:
+    ##### CAUTION: ORDER OF RULES MATTERS #####
+    # VOD: twitch.tv/videos/<vod_id>, t is the playback timestamp
+    - pattern: ^\/videos\/\d+
+      allowedParams:
+        - t
+      sanitizePath: true
+    # Clip via channel: twitch.tv/<channel>/clip/<slug>
+    - pattern: ^\/[\w]+\/clip\/[\w-]+
+      allowedParams: []
+      sanitizePath: true
+www.twitch.tv: *main
+m.twitch.tv: *main
+
+clips.twitch.tv:
+  sanitize:
+    - pattern: ^\/[\w-]+
+      allowedParams: []
+      sanitizePath: true

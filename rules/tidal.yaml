@@ -1,0 +1,13 @@
+tidal.com:
+  sanitize:
+    # Share link: tidal.com/browse/track|album|playlist|artist|video|mix/<id>
+    - pattern: '^\/browse\/(track|album|playlist|artist|video|mix)\/[\w-]+'
+      allowedParams: []
+      sanitizePath: true
+
+listen.tidal.com:
+  sanitize:
+    # App link: listen.tidal.com/track|album|playlist|artist|video|mix/<id>
+    - pattern: '^\/(track|album|playlist|artist|video|mix)\/[\w-]+'
+      allowedParams: []
+      sanitizePath: true

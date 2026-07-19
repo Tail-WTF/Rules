@@ -1,0 +1,28 @@
+store.steampowered.com:
+  sanitize:
+    # Store app page, e.g. /app/730/CounterStrike_2/
+    - pattern: '^\/app\/\d+'
+      allowedParams: []
+      sanitizePath: true
+
+s.team:
+  expand:
+    - pattern: '^\/'
+
+steamcommunity.com:
+  sanitize:
+    # Workshop/community item share link, e.g. /sharedfiles/filedetails/?id=12345
+    - pattern: '^\/sharedfiles\/filedetails\/'
+      allowedParams: [id]
+    # User profile, vanity URL
+    - pattern: '^\/id\/[^\/]+'
+      allowedParams: []
+      sanitizePath: true
+    # User profile, SteamID64
+    - pattern: '^\/profiles\/\d+'
+      allowedParams: []
+      sanitizePath: true
+    # Game community hub
+    - pattern: '^\/app\/\d+'
+      allowedParams: []
+      sanitizePath: true

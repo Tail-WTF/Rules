@@ -1,0 +1,13 @@
+www.aliexpress.com: &main
+  sanitize:
+    # Item page, e.g. /item/1005006109734517.html
+    - pattern: '^\/(.*\/)?item\/\d+\.html'
+      allowedParams: []
+      sanitizePath: true
+aliexpress.com: *main
+m.aliexpress.com: *main
+aliexpress.us: *main
+
+s.click.aliexpress.com:
+  expand:
+    - pattern: '^\/'

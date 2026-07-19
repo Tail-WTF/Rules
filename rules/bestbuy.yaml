@@ -1,0 +1,7 @@
+bestbuy.com: &main
+  sanitize:
+    # Product: bestbuy.com/site/<slug>/<sku>.p - sku is already in the path so skuId param is redundant
+    - pattern: '^\/site\/[\w-]+\/\d+\.p'
+      allowedParams: []
+      sanitizePath: true
+www.bestbuy.com: *main

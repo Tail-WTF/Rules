@@ -1,0 +1,24 @@
+youtube.com: &main
+  sanitize:
+    ##### CAUTION: ORDER OF RULES MATTERS #####
+    # Watch page: keep video id and timestamp only (drop si share tracker, list, etc.)
+    - pattern: ^\/watch
+      allowedParams:
+        - v
+        - t
+      sanitizePath: true
+    # Shorts: id is in the path, no query params needed
+    - pattern: ^\/shorts\/[\w-]+
+      allowedParams: []
+      sanitizePath: true
+www.youtube.com: *main
+m.youtube.com: *main
+music.youtube.com: *main
+
+# Video id is in the path here, not a query param
+youtu.be:
+  sanitize:
+    - pattern: ^\/[\w-]+
+      allowedParams:
+        - t
+      sanitizePath: true

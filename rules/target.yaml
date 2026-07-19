@@ -1,0 +1,7 @@
+target.com: &main
+  sanitize:
+    # Product: target.com/p/<slug>/-/A-<id>
+    - pattern: '^\/p\/[\w-]+\/-\/A-\d+'
+      allowedParams: []
+      sanitizePath: true
+www.target.com: *main

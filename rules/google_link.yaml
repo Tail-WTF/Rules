@@ -1,0 +1,4 @@
+# Google's short link domain, e.g. g.co/maps, g.co/privacytools
+g.co:
+  expand:
+    - pattern: ^\/.+

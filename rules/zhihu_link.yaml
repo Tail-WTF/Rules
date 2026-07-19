@@ -1,0 +1,8 @@
+# Zhihu wraps every outbound link in a redirect through link.zhihu.com?target=<url>.
+# Confirmed to perform a genuine HTTP 302 redirect (not a JS interstitial), so it
+# can be expanded like any other short link.
+link.zhihu.com:
+  expand:
+    # The target URL is carried in the ?target= query param, not the path
+    # (the path is always just "/"), so match unconditionally.
+    - pattern: .*
