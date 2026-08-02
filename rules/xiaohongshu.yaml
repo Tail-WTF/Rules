@@ -12,6 +12,7 @@ xiaohongshu.com: &main
       sanitizePath: true
 www.xiaohongshu.com: *main
 
-xhslink.com:
+xhslink.com: &short_link
   expand:
     - pattern: ^\/.+
+xhslink.cn: *short_link
